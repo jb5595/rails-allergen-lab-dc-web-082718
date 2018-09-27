@@ -1,0 +1,30 @@
+
+
+<div class='container'>
+
+<div class='form-inline'>
+<%= form_tag("/recipes", method: "get") do %>
+  <%= label_tag(:filter, "Number of Ingredients:", class: "form-text") %>
+  <%= number_field_tag(:filter, "", :class => "form-control mb-2 mr-sm-2 mb-sm-0") %>
+  <%= submit_tag("Filter", :class=>"btn btn-primary") %>
+<% end %>
+
+
+  <%= form_tag("/recipes", method: "get") do %>
+    <%= select_tag(:sort_by_number, options_for_select(["order by asc", "order by desc"]), {:class => "form-control mb-2 mr-sm-2 mb-sm-0"}) %>
+    <%= submit_tag("Sort", :class=>"btn btn-primary") %>
+  <% end %>
+
+</div>
+  <% @recipes.each do |recipe| %>
+  <div class="card" style="width: 24rem;">
+    <img class="card-img-top" src="<%=recipe.image_url%>" alt="Card image cap">
+    <h5 class="card-title"><%= recipe.name %> </h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <%= link_to "Go to recipe.", recipe_path(recipe), class: 'btn btn-primary'%>
+  </div>
+  <%end%>
+</div>
+
+
+</div>
