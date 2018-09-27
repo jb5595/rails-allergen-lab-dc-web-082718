@@ -32,3 +32,15 @@
    padding: 20px;
    margin: 10px;
  }
+ .resize{
+   width: 225px;
+   height: auto;
+ }
+
+.right-margin{
+  margin-right: 10px;
+}
+
+.top-margin{
+  margin-top: 15px;
+}
