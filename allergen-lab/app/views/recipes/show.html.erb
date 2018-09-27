@@ -1,7 +1,12 @@
-<h1><%= @recipe.name %></h1>
-<h2>
-  <%= @recipe.user.name %><br>
-  <% @recipe.ingredients.each do |ingredient| %>
-    <%= ingredient.name %>: Quantity: <%=ingredient.quantity%><br><br>
-  <% end %>
-</h2>
+<div class="container">
+  <div class= "text-center">
+  <h1><%= @recipe.name %></h1>
+  <img src="<%=@recipe.image_url%>" alt="Recipe_image">
+      <p>
+        Recipe Author:<%= @recipe.user.name %><br>
+        <% @recipe.ingredients.each do |ingredient| %>
+          <%= ingredient.name %>: Quantity: <%=ingredient.quantity%><br><br>
+        <% end %>
+      </h2>
+  </div>
+</div>

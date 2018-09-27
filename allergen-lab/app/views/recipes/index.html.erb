@@ -1,21 +1,23 @@
 
 
 <div class='container'>
-
+<div class "float-right">
 <div class='form-inline'>
-<%= form_tag("/recipes", method: "get") do %>
-  <%= label_tag(:filter, "Number of Ingredients:", class: "form-text") %>
-  <%= number_field_tag(:filter, "", :class => "form-control mb-2 mr-sm-2 mb-sm-0") %>
-  <%= submit_tag("Filter", :class=>"btn btn-primary") %>
-<% end %>
-
-
   <%= form_tag("/recipes", method: "get") do %>
-    <%= select_tag(:sort_by_number, options_for_select(["order by asc", "order by desc"]), {:class => "form-control mb-2 mr-sm-2 mb-sm-0"}) %>
-    <%= submit_tag("Sort", :class=>"btn btn-primary") %>
+    <%= label_tag(:filter, "Number of Ingredients:", class: "form-text") %>
+    <%= number_field_tag(:filter, "", :class => "form-control mb-2 mr-sm-2 mb-sm-0") %>
+    <%= submit_tag("Filter", :class=>"btn btn-primary") %>
   <% end %>
 
+
+    <%= form_tag("/recipes", method: "get") do %>
+      <%= select_tag(:sort_by_number, options_for_select(["order by asc", "order by desc"]), {:class => "form-control mb-2 mr-sm-2 mb-sm-0"}) %>
+      <%= submit_tag("Sort", :class=>"btn btn-primary") %>
+    <% end %>
 </div>
+
+</div>
+<div class ="offset-3">
   <% @recipes.each do |recipe| %>
   <div class="card" style="width: 24rem;">
     <img class="card-img-top" src="<%=recipe.image_url%>" alt="Card image cap">

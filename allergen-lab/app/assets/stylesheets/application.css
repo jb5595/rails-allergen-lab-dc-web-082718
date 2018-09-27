@@ -24,3 +24,11 @@
  .form-text{
    float: left;
  }
+
+ .float-right{
+   float: right;
+ }
+ .card{
+   padding: 20px;
+   margin: 10px;
+ }
